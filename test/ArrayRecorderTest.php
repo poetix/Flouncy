@@ -38,15 +38,6 @@ class ArrayRecorderTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals('value2', $arr['key1'][1]);
     }
 
-    public function testInsertsChain() {
-        $arr = ArrayRecorder::start()
-            ->key1('value1')
-            ->key2('value2')
-            ->__invoke();
-        $this->assertEquals('value1', $arr['key1']);
-        $this->assertEquals('value2', $arr['key2']);
-    }
-
     public function testSubkeyCreation() {
         $arr = ArrayRecorder::start()
             ->top_level
